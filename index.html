@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi proyecto</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+{% for entrada in entradas %}
+    <h2>{{ entrada.titulo }}</h2>
+    <p>{{ entrada.contenido }}</p>
+    <p>Categoría: {{ entrada.categoria }}</p>
+    <p>Fecha de Publicación: {{ entrada.fecha_publicacion }}</p>
+    <hr>
+{% empty %}
+    <p>No hay entradas.</p>
+{% endfor %}
+{% endblock %}
+
+</body>
+</html>

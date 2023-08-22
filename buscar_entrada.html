@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Buscar Entrada{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form_busqueda.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+<h2>Resultados de la búsqueda:</h2>
+<ul>
+    {% for resultado in resultados %}
+        <li>{{ resultado.titulo }} - {{ resultado.categoria.nombre }} - {{ resultado.fecha_publicacion }}</li>
+    {% empty %}
+        <li>No se encontraron resultados.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

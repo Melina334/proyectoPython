@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Base</title>
+</head>
+<body>
+    <h1>Blog</h1>
+    <ul>
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li><a href="{% url 'ingresar_entrada' %}">Ingresar Entrada</a></li>
+        <li><a href="{% url 'buscar_entrada' %}">Buscar Entrada</a></li>
+    </ul>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
